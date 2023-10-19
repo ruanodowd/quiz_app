@@ -4,5 +4,6 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "c:\\Users\\ruano\\Downloads\\sqlite-jdbc-3.43.0.0.jar"
-    ]
+    ],
+    "java.checkstyle.configuration": "${workspaceFolder}\\checkstyle.xml"
 }
