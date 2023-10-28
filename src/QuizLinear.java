@@ -1,11 +1,11 @@
-package EpicIndeavour;
+
 import java.util.Scanner;
 
-public class class2Questions {
+public class QuizLinear {
 	
 	
 
-	public static void game1() {
+	public static void game1(int userID) {
 		int score = 0; // This sets the initial score at 0
 		
 		
@@ -30,7 +30,7 @@ public class class2Questions {
 		
 		
 		System.out.println("Your score is:" + score +"/18");
-		
+		Statistics.recordStatistics(userID, score, 1);
 
 	}
 	public static int quiz() {

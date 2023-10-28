@@ -2,17 +2,18 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-public class quizRandom {
+public class QuizRandom {
     Scanner scanner = new Scanner(System.in);
     public static void startQuiz(int userID){
         int finalScore = runQuiz();
-        //statistics.updateStatistics(userID, finalScore);
+        Statistics.recordStatistics(userID, finalScore, 2);
     }
     private static int runQuiz(){
         Random random = new Random();
         int[] previousQuestions = new int[10];
         int score = 0;
         System.out.println("---- Quiz 2 ----");
+    
 
         Question question;
                 for (int i = 0; i < 10; i++) {
@@ -22,6 +23,7 @@ public class quizRandom {
                     } while (Arrays.asList(previousQuestions).contains(randomQuestionID));
                     previousQuestions[i] = randomQuestionID;
                     question = new Question(randomQuestionID);
+                    App.clearScreen();
                     System.out.println(question.listQuestion());
                     boolean answer = checkAnswer(question.getCorrectAnswer());
                     if (answer) {

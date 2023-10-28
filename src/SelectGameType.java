@@ -1,9 +1,9 @@
-package EpicIndeavour;
+
 import java.util.Scanner;
 
-public class selectgametype2 {
+public class SelectGameType {
 
-	public static void selectGameMode() {
+	public static void selectGameMode(int userID) {
 		
 		Scanner scanner = new Scanner(System.in);
 		
@@ -14,13 +14,12 @@ public class selectgametype2 {
 		
 		int gameChoice = scanner.nextInt();
 		
-		
 		switch (gameChoice) {
 		case 1:
-			class2Questions.game1();
+			QuizLinear.game1(userID);
 			break;
 		case 2:
-			/// add code to start game 2
+			QuizRandom.startQuiz(userID);
 			break;
 		case 3:
 			// add code to start game 3
@@ -28,8 +27,8 @@ public class selectgametype2 {
 			default:
 				System.out.println("Invalid please select a valid gamemode");
 			
-		
 		scanner.close();
+		
 		
 		
 		

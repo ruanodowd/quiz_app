@@ -10,7 +10,7 @@ public class Question {
 
     public Question(int id) {
         String query = "SELECT * FROM questions WHERE id = " + id;
-        ResultSet questionData = Database.executeSQL(query);
+        ResultSet questionData = Database.returnSQL(query);
         try {
             if (questionData.next()) {
                 this.question = questionData.getString("question");
@@ -19,6 +19,7 @@ public class Question {
                 this.optionC = questionData.getString("optionC");
                 this.optionD = questionData.getString("optionD");
                 this.correctAnswer = questionData.getString("correctAnswer");
+                questionData.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
