@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class App {
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
+        SelectMode selectMode = new SelectMode();
+        selectMode.setupGUI();
         int userID = Login.login();
-        System.out.println("Welcome to the quiz app");
-        SelectGameType.selectGameMode(userID);
 
     }
     public static void clearScreen() {  

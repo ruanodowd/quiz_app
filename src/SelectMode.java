@@ -1,4 +1,4 @@
-package EpicEndeavour;
+
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -12,7 +12,7 @@ import javax.swing.border.Border;//these are neceessary imports for swing compon
 
 
 
-public class Main implements ActionListener {
+public class SelectMode implements ActionListener {
     private JButton button; //adds buttons
     private JButton button2; 
     private JButton button3; 
@@ -80,7 +80,4 @@ public class Main implements ActionListener {
         
         }
     }
-}// ruan to redirect to this you can add public static void main(String[] args) {
-//Main main = new Main();
-//main.setupGUI();
-// edit this out when you have done this
+}
