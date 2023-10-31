@@ -16,23 +16,23 @@ public class quizRandom {
     
 
         Question question;
-                for (int i = 0; i < 10; i++) {
-                    int randomQuestionID;
-                    do {
-                        randomQuestionID = random.nextInt(18) + 1;
-                    } while (Arrays.asList(previousQuestions).contains(randomQuestionID));
-                    previousQuestions[i] = randomQuestionID;
-                    question = new Question(randomQuestionID);
-                    App.clearScreen();
-                    System.out.println(question.listQuestion());
-                    boolean answer = checkAnswer(question.getCorrectAnswer());
-                    if (answer) {
-                        score++;
-                    }
-                    System.out.println("Your score is: " + score);
-                }
-                return score;
+        for (int i = 0; i < 10; i++) {
+            int randomQuestionID;
+            do {
+                randomQuestionID = random.nextInt(18) + 1;
+            } while (Arrays.asList(previousQuestions).contains(randomQuestionID));
+            previousQuestions[i] = randomQuestionID;
+            question = new Question(randomQuestionID);
+            App.clearScreen();
+            System.out.println(question.listQuestion());
+            boolean answer = checkAnswer(question.getCorrectAnswer());
+            if (answer) {
+                score++;
             }
+            System.out.println("Your score is: " + score);
+        }
+        return score;
+        }
             
             private static boolean checkAnswer(String answer){
                 System.out.println("Enter your answer:");

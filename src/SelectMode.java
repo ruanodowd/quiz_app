@@ -71,7 +71,8 @@ public class SelectMode implements ActionListener {
             quiz = new Quiz();
         } else if (e.getSource() == button2) {
             frame.setVisible(false);
-            quiz2 = new Quiz(); 
+            
+            //quiz2 = new Quiz(); 
             // Ruan you need to add your gamemodes here just change Quiz() to whatever its called simlilary for 3
         } else if (e.getSource() == button3) {
             frame.setVisible(false);
