@@ -58,7 +58,9 @@ public class QuizThree {
            baseFrom = bases[random.nextInt(bases.length)];
            baseTo = bases[random.nextInt(bases.length)];
         }
-        
+        int decimalQuestion = random.nextInt(1, difficulty);
+        String numberFrom = decimalToAnotherBase(decimalQuestion, baseFrom);
+        String numberTo = de
         return true;
     }
     public static void main(String[] args) {
