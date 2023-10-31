@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-public class quizRandom {
+public class QuizRandom {
     Scanner scanner = new Scanner(System.in);
     public static void startQuiz(int userID){
         int finalScore = runQuiz();

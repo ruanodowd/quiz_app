@@ -5,8 +5,9 @@ public class Statistics {
     String query = "INSERT INTO games_played (user_id, score, quiz_type) VALUES (" + userID + ", " + score + ", " + quizType +")";
     Database.insertSQL(query);
     System.out.println("Would you like to see the leaderboard? (y/n)");
-    String input = App.scanner.nextLine().toUpperCase();
-    if (input.equals("Y")) {
+    String input = " ";
+    input = App.scanner.nextLine();
+    if (input.toUpperCase().equals("Y")) {
         showLeaderboard(quizType);
     }
 }

@@ -2,6 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class QuizThree {
+    Scanner scanner = new Scanner(System.in);
     private static String decimalToAnotherBase(int decimalNumber, int base){
         if (base == 10){
             return String.valueOf(decimalNumber);
@@ -48,7 +49,6 @@ public class QuizThree {
             System.out.println("Question: " + (score + 1));
             rightAnswer = askQuestion(difficulty, scanner);
         }
-        scanner.close();
         Statistics.record(userID, score, 3);
     }
     private static boolean askQuestion(int difficulty, Scanner scanner){

@@ -22,7 +22,7 @@ public class SelectGameType {
 			QuizRandom.startQuiz(userID);
 			break;
 		case 3:
-			// add code to start game 3
+			QuizThree.startQuiz(userID);
 			break;
 			default:
 				System.out.println("Invalid please select a valid gamemode");
