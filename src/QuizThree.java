@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class QuizThree {
     private static String decimalToAnotherBase(int decimalNumber, int base){
@@ -37,19 +38,20 @@ public class QuizThree {
             return result;
         }
     public static void startQuiz(int userID){
-        int questionNumber = 0;
-        int difficulty = 2;
+        int score = -1;
+        int difficulty = 1;
+        Scanner scanner = new Scanner(System.in);
         boolean rightAnswer = true;
-        while (rightAnswer = true){
-            questionNumber += 1;
+        while (rightAnswer == true){
+            score += 1;
             difficulty += 1;
-            System.out.println("Question: " + questionNumber );
-            rightAnswer = askQuestion(difficulty);
+            System.out.println("Question: " + (score + 1));
+            rightAnswer = askQuestion(difficulty, scanner);
         }
-        return;
-        //Statistics.record(userID, questionNumber - 1, 3);
+        scanner.close();
+        Statistics.record(userID, score, 3);
     }
-    private static boolean askQuestion(int difficulty){
+    private static boolean askQuestion(int difficulty, Scanner scanner){
         int [] bases = {2, 8, 10, 16};
         Random random = new Random();
         int baseFrom = 0;
@@ -58,12 +60,14 @@ public class QuizThree {
            baseFrom = bases[random.nextInt(bases.length)];
            baseTo = bases[random.nextInt(bases.length)];
         }
-        int decimalQuestion = random.nextInt(1, difficulty);
+        int decimalQuestion = random.nextInt(1, 2*difficulty);
         String numberFrom = decimalToAnotherBase(decimalQuestion, baseFrom);
-        String numberTo = de
-        return true;
-    }
-    public static void main(String[] args) {
-        startQuiz(17);
+        String numberTo = decimalToAnotherBase(decimalQuestion, baseTo);
+        System.out.println("Convert " + numberFrom + " in base " + baseFrom + " to base " + baseTo);
+        if (numberTo.equals(scanner.nextLine())) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
