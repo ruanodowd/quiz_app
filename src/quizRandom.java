@@ -8,7 +8,7 @@ public class quizRandom {
         int finalScore = runQuiz();
         Statistics.recordStatistics(userID, finalScore, 2);
     }
-    private static int runQuiz(){
+    public static int runQuiz(){
         Random random = new Random();
         int[] previousQuestions = new int[10];
         int score = 0;
@@ -34,15 +34,15 @@ public class quizRandom {
         return score;
         }
             
-            private static boolean checkAnswer(String answer){
-                System.out.println("Enter your answer:");
-                String userAnswer = App.scanner.nextLine().toUpperCase();
-                if (userAnswer.equals(answer)) {
-                    System.out.println("Correct!");
-                return true;
-                } else {
-                    System.out.println("Incorrect!");
-                    return false;
-                }
+        private static boolean checkAnswer(String answer){
+            System.out.println("Enter your answer:");
+            String userAnswer = App.scanner.nextLine().toUpperCase();
+            if (userAnswer.equals(answer)) {
+                System.out.println("Correct!");
+            return true;
+            } else {
+                System.out.println("Incorrect!");
+                return false;
+            }
             }
         }
