@@ -6,15 +6,13 @@ public class quizRandom {
     Scanner scanner = new Scanner(System.in);
     public static void startQuiz(int userID){
         int finalScore = runQuiz();
-        Statistics.recordStatistics(userID, finalScore, 2);
+        Statistics.record(userID, finalScore, 2);
     }
     public static int runQuiz(){
         Random random = new Random();
         int[] previousQuestions = new int[10];
         int score = 0;
         System.out.println("---- Quiz 2 ----");
-    
-
         Question question;
         for (int i = 0; i < 10; i++) {
             int randomQuestionID;
