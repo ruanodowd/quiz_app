@@ -30,7 +30,7 @@ public class QuizLinear {
 		
 		
 		System.out.println("Your score is:" + score +"/18");
-		Statistics.recordStatistics(userID, score, 1);
+		Statistics.record(userID, score, 1);
 
 	}
 	public static int quiz() {

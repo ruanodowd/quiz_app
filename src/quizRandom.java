@@ -2,11 +2,11 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-public class QuizRandom {
+public class quizRandom {
     Scanner scanner = new Scanner(System.in);
     public static void startQuiz(int userID){
         int finalScore = runQuiz();
-        Statistics.recordStatistics(userID, finalScore, 2);
+        Statistics.record(userID, finalScore, 2);
     }
     private static int runQuiz(){
         Random random = new Random();
