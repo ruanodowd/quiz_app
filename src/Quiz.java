@@ -118,7 +118,7 @@ public class Quiz implements ActionListener{
 	
 	
 	//a constructor for the quiz class
-	public QuizLinear() {
+	public Quiz() {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //makes it so the GUI closes when you press X button
 		frame.setSize(1500,1000); //sets the frame size x,y
 		frame.getContentPane().setBackground(Color.blue); //sets color
