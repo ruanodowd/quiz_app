@@ -9,8 +9,8 @@ public class Question {
     private String correctAnswer;
 
     public Question(int id) {
-        String query = "SELECT * FROM questions WHERE id = " + id;
-        ResultSet questionData = Database.executeSQL(query);
+        String query = "SELECT * FROM questions WHERE id = " + id; //constructs the SQL query
+        ResultSet questionData = Database.returnSQL(query); //executes the SQL query
         try {
             if (questionData.next()) {
                 this.question = questionData.getString("question");
@@ -19,18 +19,19 @@ public class Question {
                 this.optionC = questionData.getString("optionC");
                 this.optionD = questionData.getString("optionD");
                 this.correctAnswer = questionData.getString("correctAnswer");
+                questionData.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public String getCorrectAnswer() {
+    public String getCorrectAnswer() {//getter for the correct answer
         return correctAnswer;
     }
 
-    public String listQuestion() {
-        return "Question: " + question + "\n" +
+    public String listQuestion() { //getter for the question and list of options attributed to it
+        return "Question: " + question + "\n" + 
                 "Option A: " + optionA + "\n" +
                 "Option B: " + optionB + "\n" +
                 "Option C: " + optionC + "\n" +

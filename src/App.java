@@ -4,9 +4,11 @@ public class App {
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
         int userID = Login.login();
-        System.out.println("Welcome to the quiz app");
-        quizRandom.startQuiz(userID);
-        scanner.close();
+        Selectmode.selectmode(userID);
 
+    }
+    public static void clearScreen() {  //clears the CLI screen, giving the appearance of new pages
+        System.out.print("\033[H\033[2J");  
+        System.out.flush();  
     }
 }
