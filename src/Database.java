@@ -36,7 +36,7 @@ public class Database {
         Statement statement = null;
         try {
             conn = DriverManager.getConnection("jdbc:sqlite:database.db");
-            System.out.println("Connected to java");
+            //System.out.println("Connected to java");  for testing purposes
             statement = conn.createStatement();
             statement.executeUpdate(query);
         } catch (SQLException e) {
