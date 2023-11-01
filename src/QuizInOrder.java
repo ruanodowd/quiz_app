@@ -1,6 +1,6 @@
 import java.util.Scanner;  //imports the scanner class for java.util package
 
-public class quiztest {
+public class QuizInOrder {
     
     String[] questions = { //This creates an array of questions for the quiz
             "What does ::= denote?",
@@ -80,14 +80,14 @@ public class quiztest {
 
     
 
-    public void startQuiz() { //method to start the quiz
+    public void startQuiz(int userID) { //method to start the quiz
         for (index = 0; index < total_questions; index++) { //for loop that does through each question
         	displayQuestion(); //calls the display question method to display the current question
             getUserAnswer();   //calls the getUserAnswer method to prompt an answer from the user
             checkAnswer();   //calls the checkAnswer method to check if the user answers is correct
            
         }
-        showResults(); //calls the show results to display the quiz results
+        showResults(userID); //calls the show results to display the quiz results
     }
     
     
@@ -113,7 +113,7 @@ public class quiztest {
         }
     }
 
-    public void showResults() {
+    public void showResults(int userID) {
         System.out.println("Quiz Results:"); //prints quiz results
         for (int i = 0; i < total_questions; i++) { //starts from the first question and continues until it reaches the last question
             System.out.println("Question " + (i + 1) + ": Correct Answer: " + answers[i]); 
@@ -121,6 +121,7 @@ public class quiztest {
         System.out.println("Total correct answers: " + correct_guesses + " out of " + total_questions); //prints your score
         result = (int) ((correct_guesses / (double) total_questions) * 100); //calculates percent
         System.out.println("Percentage: " + result + "%"); //prints percent
+        Statistics.record(userID, correct_guesses, 1);
     }
 
     }

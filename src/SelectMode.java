@@ -15,8 +15,8 @@ public class Selectmode {
 		
 		switch (gameChoice) { //reads the input from the user then redirects to their chosen game
 		case 1:
-			 quiztest quiz = new quiztest();
-			quiz.startQuiz();
+			 QuizInOrder quiz = new QuizInOrder();
+			quiz.startQuiz(userID);
 			break;
 		case 2:
 			/// add code to start game 2
