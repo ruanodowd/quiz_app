@@ -5,6 +5,9 @@ public class Login {
     private Login() {            // stops this utility class being used as a constructor
         throw new IllegalStateException("Utility Class");
     }
+    public static void main(String[] args) {
+        
+    }
     public static int login(){
         return promptLoginDetails();
     }
