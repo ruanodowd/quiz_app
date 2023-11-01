@@ -89,10 +89,6 @@ public class QuizInOrder {
         }
         showResults(userID); //calls the show results to display the quiz results
     }
-    
-    
-    
-
 
     public void displayQuestion() {
         System.out.println("Question " + (index + 1) + ":"); //prints the question number to console starting at one
