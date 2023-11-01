@@ -1,4 +1,3 @@
-package EpicEndeavourFinal;
 import java.util.Scanner;  //imports the scanner class for java.util package
 
 public class quiztest {
