@@ -11,4 +11,19 @@ public class App {
         System.out.print("\033[H\033[2J");  
         System.out.flush();  
     }
+    public static void finishGame(int userID){  // allows the user to play again or logout
+        System.out.println("Press Q to logout and P to play again");
+        String input = scanner.nextLine();
+        if (input.equalsIgnoreCase("Q")){
+            System.out.println("You have been logged out");
+            Login.login();
+        }
+        else if (input.equalsIgnoreCase("P")){
+            Selectmode.selectmode(userID);
+        }
+        else{
+            System.out.println("Invalid input");
+            finishGame(userID);
+        }
+    }
 }
